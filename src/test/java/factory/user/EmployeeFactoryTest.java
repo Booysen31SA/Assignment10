@@ -10,7 +10,7 @@ public class EmployeeFactoryTest {
     @Test
     public void getEmployee() {
 
-        Employee employee = EmployeeFactory.getEmployee(1, "Riaz", "Khan");
+        Employee employee = EmployeeFactory.getEmployee("Riaz", "Khan");
         Assert.assertNotNull(employee);
 
     }

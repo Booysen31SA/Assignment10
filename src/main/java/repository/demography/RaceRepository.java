@@ -5,7 +5,7 @@ import repository.Repository;
 
 import java.util.Set;
 
-public interface RaceRepository extends Repository<Race, Integer> {
+public interface RaceRepository extends Repository<Race, String> {
 
     Set<Race> getAll();
 

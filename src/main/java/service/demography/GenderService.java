@@ -5,8 +5,8 @@ import service.Service;
 
 import java.util.Set;
 
-public interface GenderService extends Service<Gender, Integer> {
+public interface GenderService extends Service<Gender, String> {
 
     Set<Gender> getAll();
-
+    Gender readByName(String desc);
 }

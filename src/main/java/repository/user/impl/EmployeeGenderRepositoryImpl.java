@@ -41,9 +41,9 @@ public class EmployeeGenderRepositoryImpl implements EmployeeGenderRepository {
 
     }
 
-    public EmployeeGender read(Integer integer) {
+    public EmployeeGender read(String id) {
 
-        return employeeGenders.stream().filter(employeeGender -> employeeGender.getEmpNumber() == integer).findAny().orElse(null);
+        return employeeGenders.stream().filter(employeeGender -> employeeGender.getEmpNumber() == id).findAny().orElse(null);
 
     }
 
@@ -59,9 +59,9 @@ public class EmployeeGenderRepositoryImpl implements EmployeeGenderRepository {
         return null;
     }
 
-    public void delete(Integer integer) {
+    public void delete(String id) {
 
-        EmployeeGender toDelete = read(integer);
+        EmployeeGender toDelete = read(id);
         if (toDelete != null){
             employeeGenders.remove(toDelete);
         }

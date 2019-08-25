@@ -10,7 +10,7 @@ public class EmployeeGenderFactoryTest {
     @Test
     public void buildEmployeeGender() {
 
-        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender(1, 1);
+        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender("A", "B");
         Assert.assertNotNull(employeeGender);
 
     }

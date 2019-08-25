@@ -1,13 +1,14 @@
 package factory.demography;
 
 import domain.demography.Gender;
+import util.IdGenerator;
 
 public class GenderFactory {
 
-    public static Gender buildGender(int genderId, String gender)
-    {
+    public static Gender buildGender(String gender){
+
         return new Gender.Builder()
-                .id(genderId)
+                .id(IdGenerator.generateId())
                 .desc(gender)
                 .build();
 

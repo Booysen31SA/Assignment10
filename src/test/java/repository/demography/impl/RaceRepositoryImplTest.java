@@ -9,8 +9,6 @@ import repository.demography.RaceRepository;
 
 import java.util.Set;
 
-import static org.junit.Assert.*;
-
 public class RaceRepositoryImplTest {
 
     private RaceRepository repository;
@@ -32,11 +30,11 @@ public class RaceRepositoryImplTest {
     @Test
     public void create() {
 
-        Race employee = RaceFactory.buildRace(1,"fa");
+        Race employee = RaceFactory.buildRace("fa");
 
         repository.create(employee);
 
-        Race inRepo = repository.read(employee.getRaceID());
+        Race inRepo = repository.read(employee.getRaceId());
 
         Assert.assertNotNull(inRepo);
 
@@ -45,11 +43,11 @@ public class RaceRepositoryImplTest {
     @Test
     public void read() {
 
-        Race employee = RaceFactory.buildRace(1,"fa");
+        Race employee = RaceFactory.buildRace("fa");
 
         repository.create(employee);
 
-        Race inRepo = repository.read(employee.getRaceID());
+        Race inRepo = repository.read(employee.getRaceId());
 
         Assert.assertNotNull(inRepo);
     }
@@ -57,10 +55,10 @@ public class RaceRepositoryImplTest {
     @Test
     public void update() {
 
-        Race employee = RaceFactory.buildRace(1,"Indian");
+        Race employee = RaceFactory.buildRace("Indian");
         repository.create(employee);
 
-        Race updatedRace =  RaceFactory.buildRace(1,"White");
+        Race updatedRace =  RaceFactory.buildRace("White");
 
         repository.update(updatedRace);
 
@@ -71,17 +69,17 @@ public class RaceRepositoryImplTest {
     @Test
     public void delete() {
 
-        Race employee = RaceFactory.buildRace(1,"fa");
+        Race employee = RaceFactory.buildRace("fa");
 
         repository.create(employee);
 
-        Race inRepo = repository.read(employee.getRaceID());
+        Race inRepo = repository.read(employee.getRaceId());
 
         Assert.assertNotNull(inRepo);
 
-        repository.delete(employee.getRaceID());
+        repository.delete(employee.getRaceId());
 
-        Race deleted = repository.read(employee.getRaceID());
+        Race deleted = repository.read(employee.getRaceId());
 
         Assert.assertNull(deleted);
 

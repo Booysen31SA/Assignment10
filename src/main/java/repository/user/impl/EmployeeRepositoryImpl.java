@@ -41,9 +41,9 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     }
 
-    public Employee read(Integer integer) {
+    public Employee read(String id) {
 
-        return employees.stream().filter(employee -> employee.getEmpNumber() == integer).findAny().orElse(null);
+        return employees.stream().filter(employee -> employee.getEmpNumber() == id).findAny().orElse(null);
 
     }
 
@@ -60,7 +60,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     }
 
-    public void delete(Integer integer) {
+    public void delete(String integer) {
 
         Employee toDelete = read(integer);
         if (toDelete != null){

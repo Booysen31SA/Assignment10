@@ -2,34 +2,34 @@ package domain.user;
 
 public class EmployeeGender {
 
-    private int genderID;
-    private int empNumber;
+    private String genderId;
+    private String empNumber;
 
     public EmployeeGender(){
 
     }
 
-    public int getGenderID() {
-        return genderID;
+    public String getGenderId() {
+        return genderId;
     }
 
-    public void setGenderID(int genderID) {
-        this.genderID = genderID;
+    public void setGenderId(String genderId) {
+        this.genderId = genderId;
     }
 
-    public int getEmpNumber() {
+    public String getEmpNumber() {
         return empNumber;
     }
 
-    public void setEmpNumber(int empNumber) {
+    public void setEmpNumber(String empNumber) {
         this.empNumber = empNumber;
     }
 
-    public EmployeeGender employeeGender(int empNumber, int genderId){
+    public EmployeeGender employeeGender(String empNumber, String genderId){
 
 
         this.empNumber = empNumber;
-        this.genderID = genderId;
+        this.genderId = genderId;
         return this;
 
 
@@ -39,7 +39,7 @@ public class EmployeeGender {
     public String toString() {
         return "EmployeeGender{" +
                 "empNumber='" + empNumber + '\'' +
-                ", genderID='" + genderID + '\'' +
+                ", genderId='" + genderId + '\'' +
                 '}';
     }
 

@@ -35,8 +35,8 @@ public class EmployeeGenderServiceImpl implements EmployeeGenderService {
     }
 
     @Override
-    public EmployeeGender read(Integer integer) {
-        return repository.read(integer);
+    public EmployeeGender read(String id) {
+        return repository.read(id);
     }
 
     @Override
@@ -45,9 +45,9 @@ public class EmployeeGenderServiceImpl implements EmployeeGenderService {
     }
 
     @Override
-    public void delete(Integer integer) {
+    public void delete(String id) {
 
-        repository.delete(integer);
+        repository.delete(id);
 
     }
 }

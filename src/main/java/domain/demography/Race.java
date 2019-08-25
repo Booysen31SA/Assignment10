@@ -2,7 +2,7 @@ package domain.demography;
 
 public class Race {
 
-    private int raceID;
+    private String raceId;
     private String desc;
 
     private Race(){
@@ -11,20 +11,20 @@ public class Race {
 
     public Race(Builder builder){
 
-        this.raceID = builder.raceID;
+        this.raceId = builder.raceId;
         this.desc = builder.desc;
 
     }
 
-    public int getRaceID(){
+    public String getRaceId(){
 
-        return raceID;
+        return raceId;
 
     }
 
-    public void setRaceID(int raceID){
+    public void setRaceId(String raceId){
 
-        this.raceID = raceID;
+        this.raceId = raceId;
 
     }
 
@@ -43,19 +43,19 @@ public class Race {
     @Override
     public String toString() {
         return "Race{" +
-                "raceID='" + raceID + '\'' +
+                "raceId='" + raceId + '\'' +
                 ", desc='" + desc + '\'' +
                 '}';
     }
 
     public static class Builder {
 
-        private int raceID;
+        private String raceId;
         private String desc;
 
-        public Builder raceID(int raceID){
+        public Builder raceID(String raceID){
 
-            this.raceID = raceID;
+            this.raceId = raceID;
             return this;
 
         }

@@ -5,7 +5,7 @@ import repository.Repository;
 
 import java.util.Set;
 
-public interface GenderRepository extends Repository<Gender, Integer> {
+public interface GenderRepository extends Repository<Gender, String> {
 
     Set<Gender> getAll();
 

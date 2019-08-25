@@ -31,7 +31,7 @@ public class EmployeeRepositoryImplTest {
     @Test
     public void create() {
 
-        Employee employee = EmployeeFactory.getEmployee(1, "Riaz", "Khan");
+        Employee employee = EmployeeFactory.getEmployee("Riaz", "Khan");
 
         repository.create(employee);
 
@@ -44,7 +44,7 @@ public class EmployeeRepositoryImplTest {
     @Test
     public void read() {
 
-        Employee employee = EmployeeFactory.getEmployee(1, "Riaz", "Khan");
+        Employee employee = EmployeeFactory.getEmployee("Riaz", "Khan");
 
         repository.create(employee);
 
@@ -56,12 +56,12 @@ public class EmployeeRepositoryImplTest {
     @Test
     public void update() {
 
-        Employee employee = EmployeeFactory.getEmployee(1, "Riaz", "Khan");
+        Employee employee = EmployeeFactory.getEmployee("Riaz", "Khan");
         repository.create(employee);
 
         Assert.assertNotNull(repository.getAll());
 
-        Employee updatedEmployee = EmployeeFactory.getEmployee(employee.getEmpNumber(), "Ashley", "Kriel");
+        Employee updatedEmployee = EmployeeFactory.getEmployee( "Ashley", "Kriel");
 
         repository.update(updatedEmployee);
 
@@ -73,7 +73,7 @@ public class EmployeeRepositoryImplTest {
     @Test
     public void delete() {
 
-        Employee employee = EmployeeFactory.getEmployee(1, "Riaz", "Khan");
+        Employee employee = EmployeeFactory.getEmployee("Riaz", "Khan");
 
         repository.create(employee);
 

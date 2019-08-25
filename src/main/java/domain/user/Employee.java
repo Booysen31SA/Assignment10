@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Employee {
 
-    private int empNumber;
+    private String empNumber;
     private String empFirstName;
     private String empLastName;
 
@@ -20,11 +20,11 @@ public class Employee {
 
     }
 
-    public int getEmpNumber(){
+    public String getEmpNumber(){
         return empNumber;
     }
 
-    public void setEmpNumber(int empNumber){
+    public void setEmpNumber(String empNumber){
         this.empNumber = empNumber;
     }
 
@@ -46,11 +46,11 @@ public class Employee {
 
     public static class Builder{
 
-        private int empNumber;
+        private String empNumber;
         private String empFirstName;
         private String empLastName;
 
-        public Builder empNumber(int empNumber){
+        public Builder empNumber(String empNumber){
 
             this.empNumber = empNumber;
             return this;
@@ -91,7 +91,7 @@ public class Employee {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             Builder builder = (Builder) o;
-            return empNumber == builder.empNumber &&
+            return Objects.equals(empNumber, builder.empNumber) &&
                     Objects.equals(empFirstName, builder.empFirstName) &&
                     Objects.equals(empLastName, builder.empLastName);
         }

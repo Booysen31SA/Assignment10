@@ -5,8 +5,9 @@ import service.Service;
 
 import java.util.Set;
 
-public interface RaceService extends Service<Race, Integer> {
+public interface RaceService extends Service<Race, String> {
 
     Set<Race> getAll();
+    Race readByName(String genderDesc);
 
 }

@@ -4,10 +4,9 @@ import domain.user.EmployeeGender;
 
 public class EmployeeGenderFactory {
 
+    public static EmployeeGender buildEmployeeGender(String empId, String genderId){
 
-    public static EmployeeGender buildEmployeeGender(int empId, int genderId){
-
-        return new EmployeeGender().employeeGender(genderId, empId);
+        return new EmployeeGender().employeeGender(empId, genderId);
     }
 
 }

@@ -9,8 +9,6 @@ import repository.user.EmployeeGenderRepository;
 
 import java.util.Set;
 
-import static org.junit.Assert.*;
-
 public class EmployeeGenderRepositoryImplTest {
 
     private EmployeeGenderRepository repository;
@@ -32,7 +30,7 @@ public class EmployeeGenderRepositoryImplTest {
     @Test
     public void create() {
 
-        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender(1, 1);
+        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender("A", "B");
 
         repository.create(employee);
 
@@ -45,7 +43,7 @@ public class EmployeeGenderRepositoryImplTest {
     @Test
     public void read() {
 
-        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender(1, 1);
+        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender("FASDFASD", "AFSDFAS");
 
         repository.create(employee);
 
@@ -57,21 +55,21 @@ public class EmployeeGenderRepositoryImplTest {
     @Test
     public void update() {
 
-        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender(1, 1);
+        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender("AFSDFAS", "ASDFASD");
         repository.create(employee);
 
-        EmployeeGender updatedEmpGender = EmployeeGenderFactory.buildEmployeeGender(1, 2);
+        EmployeeGender updatedEmpGender = EmployeeGenderFactory.buildEmployeeGender("AFSDFAS", "ASDFAS");
 
         repository.update(updatedEmpGender);
 
-        Assert.assertNotEquals(employee.getGenderID(), updatedEmpGender.getEmpNumber());
+        Assert.assertNotEquals(employee.getGenderId(), updatedEmpGender.getEmpNumber());
 
     }
 
     @Test
     public void delete() {
 
-        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender(1, 1);
+        EmployeeGender employee = EmployeeGenderFactory.buildEmployeeGender("ASDFAS", "ASDFASD");
 
         repository.create(employee);
 

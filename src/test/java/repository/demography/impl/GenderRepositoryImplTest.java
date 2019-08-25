@@ -30,11 +30,11 @@ public class GenderRepositoryImplTest {
     @Test
     public void create() {
 
-        Gender employee = GenderFactory.buildGender(1, "M");
+        Gender employee = GenderFactory.buildGender("M");
 
         repository.create(employee);
 
-        Gender inRepo = repository.read(employee.getId());
+        Gender inRepo = repository.read(employee.getGenderId());
 
         Assert.assertNotNull(inRepo);
 
@@ -43,11 +43,11 @@ public class GenderRepositoryImplTest {
     @Test
     public void read() {
 
-        Gender employee = GenderFactory.buildGender(1, "M");
+        Gender employee = GenderFactory.buildGender("M");
 
         repository.create(employee);
 
-        Gender inRepo = repository.read(employee.getId());
+        Gender inRepo = repository.read(employee.getGenderId());
 
         Assert.assertNotNull(inRepo);
     }
@@ -55,10 +55,10 @@ public class GenderRepositoryImplTest {
     @Test
     public void update() {
 
-        Gender employee = GenderFactory.buildGender(1, "M");
+        Gender employee = GenderFactory.buildGender("M");
         repository.create(employee);
 
-        Gender updatedEmployee = GenderFactory.buildGender(1, "F");
+        Gender updatedEmployee = GenderFactory.buildGender("F");
 
         repository.update(updatedEmployee);
 
@@ -69,17 +69,17 @@ public class GenderRepositoryImplTest {
     @Test
     public void delete() {
 
-        Gender employee = GenderFactory.buildGender(1, "M");
+        Gender employee = GenderFactory.buildGender("M");
 
         repository.create(employee);
 
-        Gender inRepo = repository.read(employee.getId());
+        Gender inRepo = repository.read(employee.getGenderId());
 
         Assert.assertNotNull(inRepo);
 
-        repository.delete(employee.getId());
+        repository.delete(employee.getGenderId());
 
-        Gender deleted = repository.read(employee.getId());
+        Gender deleted = repository.read(employee.getGenderId());
 
         Assert.assertNull(deleted);
 

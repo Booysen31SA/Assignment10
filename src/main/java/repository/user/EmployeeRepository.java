@@ -5,7 +5,7 @@ import repository.Repository;
 
 import java.util.Set;
 
-public interface EmployeeRepository extends Repository<Employee, Integer> {
+public interface EmployeeRepository extends Repository<Employee, String> {
 
     Set<Employee> getAll();
 

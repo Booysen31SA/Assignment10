@@ -1,13 +1,14 @@
 package factory.demography;
 
 import domain.demography.Race;
+import util.IdGenerator;
 
 public class RaceFactory {
 
-    public static Race buildRace(int id, String desc)
-    {
+    public static Race buildRace(String desc){
+
         return new Race.Builder()
-                .raceID(id)
+                .raceID(IdGenerator.generateId())
                 .desc(desc)
                 .build();
 

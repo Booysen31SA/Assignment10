@@ -5,7 +5,7 @@ import service.Service;
 
 import java.util.Set;
 
-public interface EmployeeGenderService extends Service<EmployeeGender, Integer> {
+public interface EmployeeGenderService extends Service<EmployeeGender, String> {
 
     Set<EmployeeGender> getAll();
 }

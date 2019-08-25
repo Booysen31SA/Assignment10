@@ -35,8 +35,8 @@ public class RaceServiceImpl implements RaceService {
     }
 
     @Override
-    public Race read(Integer integer) {
-        return repository.read(integer);
+    public Race read(String id) {
+        return repository.read(id);
     }
 
     @Override
@@ -45,7 +45,20 @@ public class RaceServiceImpl implements RaceService {
     }
 
     @Override
-    public void delete(Integer integer) {
-        repository.delete(integer);
+    public void delete(String id) {
+        repository.delete(id);
     }
+
+    @Override
+    //method which will search the set/db for the corresponding gender
+    public Race readByName(String raceDesc){
+        //do the logic to get the gender
+        return repository.getAll()
+                .stream()
+                .filter(race -> race.getDesc().equals(raceDesc))
+                .findAny().orElse(null);
+    }
+
+
+
 }
